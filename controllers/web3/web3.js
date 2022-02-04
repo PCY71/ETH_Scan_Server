@@ -15,5 +15,16 @@ module.exports = {
             console.log(e);
             return e;
         }
+    },
+
+    getBlock: async function getBlock(blockNum) {
+        try {
+            const block = await getWeb3().eth.getBlock(blockNum)
+            console.log(block);
+            return block;
+        } catch (e) {
+            console.log(e);
+            return e;
+        }
     }
 }

@@ -4,6 +4,7 @@ const port = 8080;
 
 const controllers = require('./controllers/index');
 
+app.use(express.json());
 app.get('/', (req, res) => {
     res.send('Welcome to ETH Scan Test Server!');
 })

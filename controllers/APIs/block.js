@@ -1,3 +1,8 @@
+const { getBlock } = require('../web3/web3');
+
 module.exports = (req, res) => {
-    res.status(200).send('block test');
+    const blockNum = req.body.blockNum;
+    getBlock(blockNum).then((accounts) => {
+        res.send(accounts);
+    })
 };
