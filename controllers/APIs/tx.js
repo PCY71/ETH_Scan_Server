@@ -1,3 +1,8 @@
+const { getTx } = require('../web3/web3');
+
 module.exports = (req, res) => {
-    res.status(200).send('tx test');
+    const txId = req.body.txId;
+    getTx(txId).then((tx) => {
+        res.send(tx);
+    })
 };
